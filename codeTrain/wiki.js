@@ -1,11 +1,35 @@
+let searchURL = 'https://en.wikipedia.org/w/api.php?action=opensearch&format=json&search=';
+let req = new XMLHttpRequest();
+
+let myFunc = function(data){
+    console.log(data)
+}
+
+
 
 let userInput;
 
 function setup(){
-    noCanvas();
-    userInput = document.querySelector('#userinput').val();
+    //noCanvas();
+    userInput = document.querySelector('#userinput').value;
+    goWiki()
     
 }
+
+/*
+function goWiki(){
+    let term = document.querySelector('#userinput').value;
+    let url = searchURL + term;
+
+    req.open('GET', url);
+    req.responseType = 'json';
+    req.send();
+    
+    console.log(url);
+}
+*/
+
+
 
 let vm = new Vue({
     el: '#app',
@@ -17,6 +41,9 @@ let vm = new Vue({
 
 document.querySelector('#userinput').addEventListener('keydown', function(e){
     if(e.keyCode == 13){
-        setup();
+        goWiki();;
     }
 })
+
+
+setup();
