@@ -1,33 +1,28 @@
-let searchURL = 'https://en.wikipedia.org/w/api.php?action=opensearch&format=json&search=';
-let req = new XMLHttpRequest();
-
-let myFunc = function(data){
-    console.log(data)
-}
-
-
 
 let userInput;
 
 function setup(){
-    //noCanvas();
     userInput = document.querySelector('#userinput').value;
-    goWiki()
-    
+    goWiki()   
 }
 
-/*
+function searchData(data){
+    console.log(data);
+
+    document.querySelector('.searchResult').innerHTML = data;
+}
+
+
 function goWiki(){
     let term = document.querySelector('#userinput').value;
-    let url = searchURL + term;
 
-    req.open('GET', url);
-    req.responseType = 'json';
-    req.send();
+    let s = document.createElement('script');
+    s.src= 'https://en.wikipedia.org/w/api.php?action=opensearch&format=json&search='+term+'&callback=searchData';
+    document.body.appendChild(s);
     
-    console.log(url);
+    
 }
-*/
+
 
 
 
@@ -44,6 +39,3 @@ document.querySelector('#userinput').addEventListener('keydown', function(e){
         goWiki();;
     }
 })
-
-
-setup();

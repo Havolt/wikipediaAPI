@@ -13,8 +13,12 @@
 
     <div id="app" class="app">
         <h2>{{ head1 }}</h2>
-        <p>word: <input type="text" id="userinput" value="rainbow"></p>
+        <p>word: <input type="text" id="userinput"></p>
+
+        <div class="searchResult"></div>
     </div>
+
+
 
     <script>
         
@@ -22,7 +26,6 @@
     </script>
 
     <script src="wiki.js"></script>
-    <script src='https://en.wikipedia.org/w/api.php?action=opensearch&format=json&search=pokemon&callback=myFunc'></script>
     
     
 </body>
