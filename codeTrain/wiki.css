@@ -1,0 +1,17 @@
+html, body{
+    font-family: arial;
+}
+
+.searchLink{
+    color: blue;
+    text-decoration: underline;
+
+}
+
+.searchLink:hover{
+    cursor: pointer;
+}
+
+.searchDesc{
+    font-style: italic;
+}
